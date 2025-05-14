@@ -1,0 +1,148 @@
+/* === ОБЩИЙ КОНТЕЙНЕР === */
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* === СЕКЦИИ === */
+.about-section {
+    margin-bottom: 50px;
+}
+
+/* === ЗАГОЛОВКИ СЕКЦИЙ === */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* === МИССИЯ / ВВЕДЕНИЕ === */
+.mission-statement {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* === ОСОБЕННОСТИ (ПЛЮСЫ СЕРВИСА) === */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.feature-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 25px;
+    border: 1px solid #333;
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.feature-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.feature-text {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* === КОМАНДА === */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 3px solid #ffcc00;
+}
+
+.member-name {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.member-position {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+/* === СТАТИСТИКА / ДОСТИЖЕНИЯ === */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* === ПРОЦЕСС / ЭТАПЫ РАБОТЫ === */
+.process-steps {
+    color: #ccc;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.process-steps li {
+    margin-bottom: 10px;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .mission-statement {
+        font-size: 18px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+}

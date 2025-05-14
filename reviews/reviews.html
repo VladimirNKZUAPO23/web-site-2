@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы - CS2 Маркетплейс</title>
+    <link rel="stylesheet" href="reviews.css">
+</head>
+<body class="reviews">
+    <header>
+        <div class="logo">
+            <img src="../main/logo.png" alt="Логотип CS2 Маркетплейс">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../market/market.html">Маркет</a></li>
+                <li><a href="reviews.html" class="active">Отзывы</a></li>
+                <li><a href="../main/about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="login-button">
+            <a href="../main/error.html">Войти через Steam</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="reviews-container">
+            <h1 class="page-title">Отзывы наших клиентов</h1>
+            
+            <div class="reviews-list" id="reviewsList">
+                <!-- Отзывы будут загружены через JavaScript -->
+            </div>
+            
+            <div class="add-review">
+                <h2>Оставить отзыв</h2>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="userName">Ваше имя:</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    
+                    <div class="rating-select">
+                        <label for="rating">Оценка:</label>
+                        <select id="rating" required>
+                            <option value="">Выберите оценку</option>
+                            <option value="5">★★★★★ Отлично</option>
+                            <option value="4">★★★★☆ Хорошо</option>
+                            <option value="3">★★★☆☆ Удовлетворительно</option>
+                            <option value="2">★★☆☆☆ Плохо</option>
+                            <option value="1">★☆☆☆☆ Ужасно</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewText">Ваш отзыв:</label>
+                        <textarea id="reviewText" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Маркетплейс внутриигровых предметов.</p>
+    </footer>
+
+    <script src="reviews.js"></script>
+</body>
+</html>

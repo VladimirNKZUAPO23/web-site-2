@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маркет CS2</title>
+    <link rel="stylesheet" href="../main/styles.css">
+</head>
+<body class="market">
+    <header>
+        <div class="logo">
+            <img src="../main/logo.png" alt="Логотип">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="market.html" class="active">Маркет</a></li>
+                <li><a href="../reviews/reviews.html">Отзывы</a></li>
+                <li><a href="../main/about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="login-button">
+            <a href="../main/error.html">Войти через Steam</a>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="page-title">Маркет предметов CS2</h1>
+
+        <div class="market-container">
+            <div class="filters">
+                <h2>Фильтры</h2>
+
+                <div class="filter-group">
+                    <h3>Тип оружия</h3>
+                    <select id="weapon-type">
+                        <option value="all">Все типы</option>
+                        <option value="rifle">Штурмовые винтовки</option>
+                        <option value="ak47">AK-47</option>
+                        <option value="m4a4">M4A4</option>
+                        <option value="m4a1s">M4A1-S</option>
+                        <option value="awp">Снайперские</option>
+                        <option value="awp">AWP</option>
+                        <option value="scout">SSG 08</option>
+                        <option value="pistol">Пистолеты</option>
+                        <option value="usp">USP-S</option>
+                        <option value="glock">Glock-18</option>
+                        <option value="deagle">Desert Eagle</option>
+                        <option value="smg">ПП</option>
+                        <option value="mp9">MP9</option>
+                        <option value="mac10">MAC-10</option>
+                        <option value="knife">Ножи</option>
+                        <option value="gloves">Перчатки</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Редкость</h3>
+                    <select id="rarity-filter">
+                        <option value="all">Любая</option>
+                        <option value="consumer">Consumer Grade</option>
+                        <option value="industrial">Industrial Grade</option>
+                        <option value="mil-spec">Mil-Spec</option>
+                        <option value="restricted">Restricted</option>
+                        <option value="classified">Classified</option>
+                        <option value="covert">Covert</option>
+                        <option value="rare">Extraordinary</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Качество</h3>
+                    <select id="quality-filter">
+                        <option value="all">Любое</option>
+                        <option value="factory-new">Factory New</option>
+                        <option value="minimal-wear">Minimal Wear</option>
+                        <option value="field-tested">Field-Tested</option>
+                        <option value="well-worn">Well-Worn</option>
+                        <option value="battle-scarred">Battle-Scarred</option>
+                    </select>
+                </div>
+
+                <div class="price-range">
+                    <h3>Цена, ₽</h3>
+                    <div class="price-inputs">
+                        <input type="number" id="min-price" placeholder="От" min="0">
+                        <span>-</span>
+                        <input type="number" id="max-price" placeholder="До" min="0">
+                    </div>
+                </div>
+
+                <button class="apply-filters">Применить фильтры</button>
+                <button class="reset-filters">Сбросить</button>
+            </div>
+
+            <div class="items-grid">
+                <div class="item-card" data-type="ak47" data-rarity="restricted" data-quality="field-tested" data-price="1499">
+                    <img src="ak47_redline.jpg" alt="AK-47 | Красная линия">
+                    <div class="item-info">
+                        <h3>AK-47 | Красная линия</h3>
+                        <div class="item-details">
+                            <span class="rarity restricted">Restricted</span>
+                            <span class="quality field-tested">Field-Tested</span>
+                        </div>
+                        <p class="price">1,499 ₽</p>
+                        <button class="buy-button" onclick="window.location.href='../main/error.html'">Купить</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-type="m4a4" data-rarity="classified" data-quality="minimal-wear" data-price="7890">
+                    <img src="m4a4_howl.jpg" alt="M4A4 | Howl">
+                    <div class="item-info">
+                        <h3>M4A4 | Howl</h3>
+                        <div class="item-details">
+                            <span class="rarity classified">Classified</span>
+                            <span class="quality minimal-wear">Minimal Wear</span>
+                        </div>
+                        <p class="price">7,890 ₽</p>
+                        <button class="buy-button" onclick="window.location.href='../main/error.html'">Купить</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-type="awp" data-rarity="covert" data-quality="factory-new" data-price="12500">
+                    <img src="awp_dragonlore.jpg" alt="AWP | Dragon Lore">
+                    <div class="item-info">
+                        <h3>AWP | Dragon Lore</h3>
+                        <div class="item-details">
+                            <span class="rarity covert">Covert</span>
+                            <span class="quality factory-new">Factory New</span>
+                        </div>
+                        <p class="price">12,500 ₽</p>
+                        <button class="buy-button" onclick="window.location.href='../main/error.html'">Купить</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-type="knife" data-rarity="rare" data-quality="factory-new" data-price="45200">
+                    <img src="knife_fade.jpg" alt="Нож | Фейд">
+                    <div class="item-info">
+                        <h3>Нож | Фейд</h3>
+                        <div class="item-details">
+                            <span class="rarity rare">Extraordinary</span>
+                            <span class="quality factory-new">Factory New</span>
+                        </div>
+                        <p class="price">45,200 ₽</p>
+                        <button class="buy-button" onclick="window.location.href='../main/error.html'">Купить</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-type="usp" data-rarity="mil-spec" data-quality="factory-new" data-price="650">
+                    <img src="usp_negev.jpg" alt="USP-S | Neo-Noir">
+                    <div class="item-info">
+                        <h3>USP-S | Neo-Noir</h3>
+                        <div class="item-details">
+                            <span class="rarity mil-spec">Mil-Spec</span>
+                            <span class="quality factory-new">Factory New</span>
+                        </div>
+                        <p class="price">650 ₽</p>
+                        <button class="buy-button" onclick="window.location.href='../main/error.html'">Купить</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-type="gloves" data-rarity="covert" data-quality="minimal-wear" data-price="32100">
+                    <img src="gloves_sport.jpg" alt="Перчатки | Спортивные">
+                    <div class="item-info">
+                        <h3>Перчатки | Спортивные</h3>
+                        <div class="item-details">
+                            <span class="rarity covert">Covert</span>
+                            <span class="quality minimal-wear">Minimal Wear</span>
+                        </div>
+                        <p class="price">32,100 ₽</p>
+                        <button class="buy-button" onclick="window.location.href='../main/error.html'">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Маркетплейс внутриигровых предметов.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
