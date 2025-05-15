@@ -1,5 +1,5 @@
-/* === ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ === */
-body.reviews {
+/* === ОБЩИЕ НАСТРОЙКИ === */
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #111;
@@ -9,18 +9,24 @@ body.reviews {
     min-height: 100vh;
 }
 
-/* === ШАПКА === */
+/* === ШАПКА (HEADER) === */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #1a1a1a;
     padding: 15px 170px;
-    border-bottom: 1px solid #333;
+    position: relative;
+    z-index: 100;
 }
 
 .logo img {
     height: 40px;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 /* === НАВИГАЦИЯ === */
@@ -68,19 +74,25 @@ nav ul li a.active::after {
     padding: 8px 16px;
     border-radius: 6px;
     font-weight: bold;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
 }
 
 .login-button a:hover {
     background-color: #ffd633;
+    transform: translateY(-2px);
 }
 
-/* === ОСНОВНОЙ КОНТЕНТ === */
+/* === ОСНОВНОЙ КОНТЕНТ (MAIN) === */
 main {
     flex: 1;
-    padding: 40px 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-left: 100px;
+    padding: 40px 20px;
 }
-
 /* === ЗАГОЛОВОК СТРАНИЦЫ === */
 .page-title {
     text-align: left;
@@ -162,7 +174,7 @@ main {
 .add-review {
     background-color: #1a1a1a;
     border-radius: 8px;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid #333;
     margin: 40px auto;
     max-width: 850px;
@@ -192,7 +204,7 @@ main {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px 5px;
     background-color: #222;
     color: #fff;
     border: 1px solid #444;
@@ -269,95 +281,70 @@ footer {
 }
 
 /* === АДАПТИВНОСТЬ === */
-
-/* Для экранов до 1200px */
 @media (max-width: 1200px) {
-    header,
-    main {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
+    header { padding: 15px 50px; }
+    .page-title { padding: 0 100px; }
+    .hero-container { padding: 30px 50px; }
 }
 
-/* Для экранов до 900px */
 @media (max-width: 900px) {
-    header,
-    main {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    .page-title {
-        font-size: 36px;
-    }
+    .page-title { padding: 0 50px; }
+    .market-container { flex-direction: column; }
+    .filters { width: auto; position: static; }
+    .hero-container { padding: 30px 30px; }
 }
 
-/* Для планшетов и телефонов до 768px */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 15px 20px;
-        gap: 15px;
-    }
-
-    nav ul {
-        gap: 15px;
+    header { 
+        padding: 15px 20px; 
+        flex-direction: row; 
         flex-wrap: wrap;
-        justify-content: center;
+        gap: 15px; 
     }
-
-    main {
-        padding: 30px 20px;
+    
+    .logo { order: 1; }
+    nav { order: 3; width: 100%; }
+    .login-button { order: 2; }
+    
+    nav ul { 
+        gap: 15px; 
+        flex-wrap: wrap; 
+        justify-content: center; 
     }
-
-    .page-title {
-        font-size: 32px;
-        text-align: center;
-        padding: 0;
+    
+    main { margin-left: 20px; padding: 30px 15px; }
+    .hero-container { 
+        flex-direction: column; 
+        padding: 40px 20px; 
+        margin-left: 0; 
     }
-
-    .add-review h2 {
-        font-size: 24px;
+    .hero-text, .hero-image { max-width: 100%; }
+    .hero-image img { 
+        width: 100%; 
+        margin-left: 0;
     }
-
-    .review-avatar {
-        width: 50px;
-        height: 50px;
+    .main-title { font-size: 36px; }
+    .main-subtext { font-size: 18px; }
+    .page-title { 
+        padding: 0 20px; 
+        font-size: 28px; 
+        text-align: center; 
     }
-
-    .review-user {
-        font-size: 18px;
-    }
+    .items-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 }
 
-/* Для мобильных до 480px */
 @media (max-width: 480px) {
-    .review-header {
-        flex-wrap: wrap;
+    header { padding: 12px 15px; }
+    .logo img { height: 32px; }
+    .login-button a { 
+        padding: 6px 12px; 
+        font-size: 14px;
     }
-
-    .review-rating {
-        margin-left: 0;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .rating-select {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .rating-select select {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .submit-button {
-        width: 100%;
-    }
-
-    .page-title {
-        font-size: 28px;
-    }
+    nav ul li a { font-size: 16px; }
+    .items-grid { grid-template-columns: 1fr; }
+    .price-inputs input { max-width: 100%; }
+    .price-inputs { flex-direction: column; gap: 10px; }
+    .hero-container { padding: 30px 15px; }
+    .main-title { font-size: 32px; }
+    .main-subtext { font-size: 16px; }
 }

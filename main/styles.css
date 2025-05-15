@@ -16,10 +16,17 @@ header {
     justify-content: space-between;
     background-color: #1a1a1a;
     padding: 15px 170px;
+    position: relative;
+    z-index: 100;
 }
 
 .logo img {
     height: 40px;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 /* === НАВИГАЦИЯ === */
@@ -67,11 +74,13 @@ nav ul li a.active::after {
     padding: 8px 16px;
     border-radius: 6px;
     font-weight: bold;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
 }
 
 .login-button a:hover {
     background-color: #ffd633;
+    transform: translateY(-2px);
 }
 
 /* === ОСНОВНОЙ КОНТЕНТ (MAIN) === */
@@ -92,6 +101,7 @@ main {
     margin-bottom: 30px;
     line-height: 1.2;
     max-width: 700px;
+    color: #ffcc00;
 }
 
 .main-subtext {
@@ -126,8 +136,8 @@ main {
     width: 140%;
     border-radius: 8px;
     margin-left: -100px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-
 /* === ПОДВАЛ (FOOTER) === */
 footer {
     background-color: #1a1a1a;
@@ -362,31 +372,68 @@ footer {
 @media (max-width: 1200px) {
     header { padding: 15px 50px; }
     .page-title { padding: 0 100px; }
+    .hero-container { padding: 30px 50px; }
 }
 
 @media (max-width: 900px) {
     .page-title { padding: 0 50px; }
     .market-container { flex-direction: column; }
     .filters { width: auto; position: static; }
+    .hero-container { padding: 30px 30px; }
 }
 
 @media (max-width: 768px) {
-    header { padding: 15px 20px; flex-direction: column; gap: 15px; }
-    nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    header { 
+        padding: 15px 20px; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        gap: 15px; 
+    }
+    
+    .logo { order: 1; }
+    nav { order: 3; width: 100%; }
+    .login-button { order: 2; }
+    
+    nav ul { 
+        gap: 15px; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+    
     main { margin-left: 20px; padding: 30px 15px; }
-    .hero-container { flex-direction: column; padding: 40px 20px; margin-left: 0; }
+    .hero-container { 
+        flex-direction: column; 
+        padding: 40px 20px; 
+        margin-left: 0; 
+    }
     .hero-text, .hero-image { max-width: 100%; }
-    .hero-image img { width: 100%; }
+    .hero-image img { 
+        width: 100%; 
+        margin-left: 0;
+    }
     .main-title { font-size: 36px; }
     .main-subtext { font-size: 18px; }
-    .page-title { padding: 0 20px; font-size: 28px; text-align: center; }
+    .page-title { 
+        padding: 0 20px; 
+        font-size: 28px; 
+        text-align: center; 
+    }
     .items-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 }
 
 @media (max-width: 480px) {
+    header { padding: 12px 15px; }
+    .logo img { height: 32px; }
+    .login-button a { 
+        padding: 6px 12px; 
+        font-size: 14px;
+    }
+    nav ul li a { font-size: 16px; }
     .items-grid { grid-template-columns: 1fr; }
     .price-inputs input { max-width: 100%; }
     .price-inputs { flex-direction: column; gap: 10px; }
+    .hero-container { padding: 30px 15px; }
+    .main-title { font-size: 32px; }
+    .main-subtext { font-size: 16px; }
 }
-
 
